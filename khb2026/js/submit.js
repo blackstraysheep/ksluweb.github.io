@@ -1,8 +1,12 @@
+import { FORM_IDS } from './formIds.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.submitform');
-  Array.from(form.elements).forEach(el => {
-    if (!el.name) return;
-    const saved = sessionStorage.getItem(el.name);
+  Object.entries(FORM_IDS).forEach(([id, entry]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.name = entry;
+    const saved = sessionStorage.getItem(entry);
     if (saved !== null) {
       if (el.type === 'checkbox') {
         el.checked = saved === el.value;

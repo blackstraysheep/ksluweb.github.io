@@ -1,40 +1,27 @@
-let submitted = false;
+import { FORM_IDS } from './formIds.js';
+window.submitted = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const mapping = {
-    k4_5: 'entry.1298998029',
-    k4_4: 'entry.37830618',
-    k4_3: 'entry.422144799',
-    k4_2: 'entry.1260825403',
-    k4_1: 'entry.1814188013',
-    k3_5: 'entry.2056770193',
-    k3_3: 'entry.1656815498',
-    k3_1: 'entry.34338146',
-    k2_5: 'entry.1969961142',
-    k2_3: 'entry.720810145',
-    k2_1: 'entry.198909606',
-    k1_5: 'entry.2099041445',
-    k1_3: 'entry.631048486',
-    k1_1: 'entry.700615604',
-    teamname: 'entry.1986237800'
-  };
-
-  Object.keys(mapping).forEach(id => {
-    const key = mapping[id];
+  const ids = ['k4_5', 'k4_4', 'k4_3', 'k4_2', 'k4_1', 'k3_5', 'k3_3', 'k3_1', 'k2_5', 'k2_3', 'k2_1', 'k1_5', 'k1_3', 'k1_1', 'teamName'];
+  ids.forEach(id => {
+    const key = FORM_IDS[id];
     const text = sessionStorage.getItem(key) || '';
     const element = document.getElementById(id);
-    element.textContent = text.trim();
+    if (element) {
+      element.textContent = text.trim();
+    }
   });
 
   const form = document.getElementById('finalForm');
-  for (let i = 0; i < sessionStorage.length; i++) {
-    const key = sessionStorage.key(i);
+  Object.values(FORM_IDS).forEach(key => {
+    const value = sessionStorage.getItem(key);
+    if (value === null) return;
     const input = document.createElement('input');
     input.type = 'hidden';
     input.name = key;
-    input.value = sessionStorage.getItem(key);
+    input.value = value;
     form.appendChild(input);
-  }
+  });
 
   form.addEventListener('submit', () => {
     sessionStorage.clear();
