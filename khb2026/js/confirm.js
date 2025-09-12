@@ -2,13 +2,14 @@ import { FORM_IDS } from './formIds.js';
 window.submitted = false;
 
 document.addEventListener('DOMContentLoaded', () => {
+  const SANITIZE_OPTIONS = { ALLOWED_TAGS: ['ruby', 'rt', 'b'] };
   const ids = ['k4_5', 'k4_4', 'k4_3', 'k4_2', 'k4_1', 'k3_5', 'k3_3', 'k3_1', 'k2_5', 'k2_3', 'k2_1', 'k1_5', 'k1_3', 'k1_1', 'teamName'];
   ids.forEach(id => {
     const key = FORM_IDS[id];
-    const text = sessionStorage.getItem(key) || '';
+    const html = sessionStorage.getItem(key) || '';
     const element = document.getElementById(id);
     if (element) {
-      element.textContent = text.trim();
+      element.innerHTML = DOMPurify.sanitize(html, SANITIZE_OPTIONS);
     }
   });
 
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = document.createElement('input');
     input.type = 'hidden';
     input.name = key;
-    input.value = value;
+    input.value = DOMPurify.sanitize(value, SANITIZE_OPTIONS);
     form.appendChild(input);
   });
 

@@ -1,6 +1,7 @@
 import { FORM_IDS } from './formIds.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const SANITIZE_OPTIONS = { ALLOWED_TAGS: ['ruby', 'rt', 'b'] };
   const form = document.querySelector('.submitform');
   Object.entries(FORM_IDS).forEach(([id, entry]) => {
     const el = document.getElementById(id);
@@ -8,10 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     el.name = entry;
     const saved = sessionStorage.getItem(entry);
     if (saved !== null) {
+      const cleanSaved = DOMPurify.sanitize(saved, SANITIZE_OPTIONS);
       if (el.type === 'checkbox') {
-        el.checked = saved === el.value;
+        el.checked = cleanSaved === el.value;
       } else {
-        el.value = saved;
+        el.value = cleanSaved;
       }
     }
   });
@@ -20,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const fd = new FormData(form);
     fd.forEach((value, key) => {
-      sessionStorage.setItem(key, value);
+      const clean = DOMPurify.sanitize(value, SANITIZE_OPTIONS);
+      sessionStorage.setItem(key, clean);
     });
     window.location.href = 'confirm.html';
   });
