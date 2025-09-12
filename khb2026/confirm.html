@@ -9,6 +9,10 @@
 <body>
   <header>
     <h2>関西俳句バトル2026　投句内容確認</h2>
+    <form id="finalForm" class="top-buttons" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZNCzbTuJtXr1P0_Qb-Luii1IOVjQdGYUgpyqkdp8YxjcvbQ/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      <input id="finalSubmit" class="submit" type="submit" value="送信">
+      <button type="button" id="backButton" class="submit">修正に戻る</button>
+    </form>
   </header>
   <section id="top">
     <div id="wrapper">
@@ -78,10 +82,6 @@
       </div>
     </div>
   </section>
-  <form id="finalForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZNCzbTuJtXr1P0_Qb-Luii1IOVjQdGYUgpyqkdp8YxjcvbQ/formResponse?embedded=true" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-    <input id="finalSubmit" class="submit" type="submit" value="送信">
-    <button type="button" id="backButton" class="submit">修正に戻る</button>
-  </form>
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" onload="if(submitted){window.location='finish.html';}"></iframe>
   <script src="js/confirm.js"></script>
 </body>
