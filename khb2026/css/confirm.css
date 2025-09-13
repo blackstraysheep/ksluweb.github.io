@@ -224,9 +224,25 @@ writing-mode: vertical-rl;
 text-align: left;
 display: inline-block;
 }
+
+/* 自動調整が適用された俳句欄のスタイル */
+.kunakami.auto-vertical {
+  font-size: 2.8em; /* 基本サイズを維持 */
+}
 .hikou {
 writing-mode: horizontal-tb;
 }
 .tcy {
     text-combine-upright: all;
+}
+
+/* 縦書き自動調整機能用スタイル */
+.auto-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+  line-height: 1;
+  display: inline-block;
+  transform-origin: top right;
+  /* letter-spacing と transform はJSで動的に設定 */
 }
