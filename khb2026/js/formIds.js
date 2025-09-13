@@ -32,3 +32,5 @@ export const FORM_IDS = {
   specialNote: "entry.1269772",
   agree: "entry.1582796102"
 };
+
+export const formurl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZNCzbTuJtXr1P0_Qb-Luii1IOVjQdGYUgpyqkdp8YxjcvbQ/formResponse?embedded=true"
