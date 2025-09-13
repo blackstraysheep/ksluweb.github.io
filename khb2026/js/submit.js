@@ -1,5 +1,8 @@
 import { FORM_IDS } from './formIds.js';
 
+// フォーム送信先URLの定義
+const FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZNCzbTuJtXr1P0_Qb-Luii1IOVjQdGYUgpyqkdp8YxjcvbQ/formResponse?embedded=true";
+
 document.addEventListener('DOMContentLoaded', () => {
   const SANITIZE_OPTIONS = { ALLOWED_TAGS: ['ruby', 'rt', 'b'] };
   const form = document.querySelector('.submitform');
@@ -16,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         el.value = cleanSaved;
       }
     }
+      // フォームのaction属性を設定
+  if (form) {
+    form.action = FORM_URL;
   });
 
   form.addEventListener('submit', e => {
