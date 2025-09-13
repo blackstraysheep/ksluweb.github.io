@@ -1,12 +1,11 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 :root {
-    --grey: #333333;
-    --white: #ffffff;
-    --yellow: #fffc2e;
-    --deepyellow: #ffec00;
-    --pastelyellow: #fff78e;
-
+    --grey: #333;
+    --white: #fff;
+    --green: #2eff2e;
+    --deepgreen: #00cd00;
+    --pastelgreen: #8eff8e;
 }
 body{
     margin: 0rem;
@@ -18,7 +17,7 @@ html{
 }
 /*HEADER================================================ */
 header {
-    background-image: linear-gradient(var(--yellow), var(--pastelyellow));
+    background-image: linear-gradient(var(--green), var(--pastelgreen));
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -39,7 +38,7 @@ header a {
     right: 0;
     display: flex;
     gap: 0.5rem;
-    background-color: var(--pastelyellow);
+    background-color: var(--pastelgreen);
     padding: 0.5rem;
 }
 .btn-menu {
@@ -86,7 +85,7 @@ header a {
 .btn {
 display: flex;
     box-sizing: border-box;
-    background-color: var(--pastelyellow);
+    background-color: var(--pastelgreen);
     color: #000000;
     cursor: pointer;
     align-items: center;
@@ -246,3 +245,4 @@ writing-mode: horizontal-tb;
   transform-origin: top right;
   /* letter-spacing と transform はJSで動的に設定 */
 }
+
