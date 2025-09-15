@@ -1,11 +1,9 @@
-import { FORM_IDS } from './formIds.js';
-
-// フォーム送信先URLの定義
-const FORM_URL = form_url;
+import { FORM_IDS, FORM_URL } from './formIds.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const SANITIZE_OPTIONS = { ALLOWED_TAGS: ['ruby', 'rt', 'b'] };
   const form = document.querySelector('.submitform');
+
   Object.entries(FORM_IDS).forEach(([id, entry]) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -19,10 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
         el.value = cleanSaved;
       }
     }
-      // フォームのaction属性を設定
-  if (form) {
-    form.action = FORM_URL;
   });
+
+  if (!form) {
+    return;
+  }
+
+  // フォームのaction属性を設定
+  form.action = FORM_URL;
 
   form.addEventListener('submit', e => {
     e.preventDefault();
