@@ -11,7 +11,8 @@ body{
     margin: 0rem;
     color: #000000;
     height: 100%;
-    transform: scale(0.8);
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: white;
 }
 html{
     height: 100%;
@@ -51,27 +52,6 @@ header a {
     background-color: var(--white);
     font-size: 1rem;
     text-align: center;
-}
-.main-nav {
-    background: var(--white);
-    width: 0;
-    position: absolute;
-    top: 4rem;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    z-index: 2;
-    overflow: hidden;
-    transition: .5s;
-    font-family: 'Noto Sans JP', sans-serif;
-    }
-.main-nav a {
-    display: block;
-}
-.main-nav.open-menu {
-    width: 240px;
-    right: 0;
-    padding: 0;
 }
 
 #top{
@@ -210,10 +190,6 @@ border: 2px solid #000000;
         max-height: 60vh;
         }
         
-body {
-font-family: 'Noto Sans JP', sans-serif;
-background-color: white;
-}
 .kunakami {
 font-weight:700;
 font-size: 2.8em;
@@ -245,6 +221,3 @@ writing-mode: horizontal-tb;
   transform-origin: top right;
   /* letter-spacing と transform はJSで動的に設定 */
 }
-
-
-
