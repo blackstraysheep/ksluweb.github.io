@@ -45,4 +45,5 @@ export const FORM_IDS = {
 };
 
 
-export const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf5y5ZT6ul43NN9E_Qu7VIq1rDli2_EQnm_x8Q6OXH3_2bUIQ/viewform"
+export const FORM_URL =
+  'https://docs.google.com/forms/u/0/d/e/1FAIpQLSf5y5ZT6ul43NN9E_Qu7VIq1rDli2_EQnm_x8Q6OXH3_2bUIQ/formResponse?embedded=true';
