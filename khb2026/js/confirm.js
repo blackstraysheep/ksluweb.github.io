@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const form = document.getElementById('finalForm');
+  const submitBtn = document.getElementById('finalSubmit');
   if (!form) {
     return;
   }
@@ -29,7 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     form.appendChild(input);
   });
 
-  form.addEventListener('submit', () => {
+  form.addEventListener('submit', event => {
+    if (window.submitted) {
+      event.preventDefault();
+      return;
+    }
+    window.submitted = true;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+    }
     sessionStorage.clear();
   });
 
