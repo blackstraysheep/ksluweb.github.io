@@ -1,4 +1,4 @@
-import { FORM_IDS } from './formIds.js';
+import { FORM_IDS, FORM_URL } from './formIds.js';
 window.submitted = false;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const form = document.getElementById('finalForm');
+  if (!form) {
+    return;
+  }
+  form.action = FORM_URL;
+
   Object.values(FORM_IDS).forEach(key => {
     const value = sessionStorage.getItem(key);
     if (value === null) return;
