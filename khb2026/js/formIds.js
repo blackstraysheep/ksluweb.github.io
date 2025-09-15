@@ -1,36 +1,48 @@
 export const FORM_IDS = {
-  teamName: "entry.1986237800",
-  email: "entry.920746324",
-  k1_5: "entry.2099041445",
-  k1_5_author: "entry.754038290",
-  k1_3: "entry.631048486",
-  k1_3_author: "entry.1731782796",
-  k1_1: "entry.700615604",
-  k1_1_author: "entry.504831758",
-  k2_5: "entry.1969961142",
-  k2_5_author: "entry.225174723",
-  k2_3: "entry.720810145",
-  k2_3_author: "entry.299656637",
-  k2_1: "entry.198909606",
-  k2_1_author: "entry.336062147",
-  k3_5: "entry.2056770193",
-  k3_5_author: "entry.2123697627",
-  k3_3: "entry.1656815498",
-  k3_3_author: "entry.1255780163",
-  k3_1: "entry.34338146",
-  k3_1_author: "entry.1649419061",
-  k4_5: "entry.1298998029",
-  k4_5_author: "entry.111238642",
-  k4_4: "entry.37830618",
-  k4_4_author: "entry.523410493",
-  k4_3: "entry.422144799",
-  k4_3_author: "entry.80474428",
-  k4_2: "entry.1260825403",
-  k4_2_author: "entry.1709474016",
-  k4_1: "entry.1814188013",
-  k4_1_author: "entry.983752623",
-  specialNote: "entry.1269772",
-  agree: "entry.1582796102"
+  // 基本情報
+  teamName: "entry.108239083",
+  email:    "entry.1226955084",
+  agree:    "entry.2092297968", 
+
+  // 兼題1 (L1) → k1 系列
+  k1_1: "entry.1134716291",
+  k1_1_author: "entry.2094515259",
+  k1_3: "entry.1310591207",
+  k1_3_author: "entry.1017352613",
+  k1_5: "entry.1281921627",
+  k1_5_author: "entry.210167544",
+
+  // 兼題2 (L2) → k2 系列
+  k2_1: "entry.1134833295",
+  k2_1_author: "entry.26022693",
+  k2_3: "entry.1447707779",
+  k2_3_author: "entry.1389067800",
+  k2_5: "entry.70306114",
+  k2_5_author: "entry.1023830777",
+
+  // 兼題3 (L3) → k3 系列
+  k3_1: "entry.1820328862",
+  k3_1_author: "entry.827566467",
+  k3_3: "entry.2055458817",
+  k3_3_author: "entry.1442453513",
+  k3_5: "entry.1338774442",
+  k3_5_author: "entry.1040309667",
+
+  // 決勝 (Final) → k4 系列
+  k4_1: "entry.1727141321",  // 先鋒
+  k4_1_author: "entry.104191410",
+  k4_2: "entry.1651130289",  // 次鋒
+  k4_2_author: "entry.1671280502",
+  k4_3: "entry.787005766",   // 中堅
+  k4_3_author: "entry.1311489464",
+  k4_4: "entry.428238530",   // 副将
+  k4_4_author: "entry.1014507408",
+  k4_5: "entry.407947087",   // 大将
+  k4_5_author: "entry.287454315",
+
+  // 特記事項
+  specialNote: "entry.1544347014",
 };
 
-export const FORM_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZNCzbTuJtXr1P0_Qb-Luii1IOVjQdGYUgpyqkdp8YxjcvbQ/formResponse?embedded=true"
+
+export const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf5y5ZT6ul43NN9E_Qu7VIq1rDli2_EQnm_x8Q6OXH3_2bUIQ/viewform"
