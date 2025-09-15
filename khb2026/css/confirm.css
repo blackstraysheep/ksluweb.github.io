@@ -11,7 +11,7 @@ body{
     margin: 0rem;
     color: #000000;
     height: 100%;
-    zoom: 0.8; /* 80%に縮小 */
+    transform: scale(0.8);
 }
 html{
     height: 100%;
@@ -245,5 +245,6 @@ writing-mode: horizontal-tb;
   transform-origin: top right;
   /* letter-spacing と transform はJSで動的に設定 */
 }
+
 
 
