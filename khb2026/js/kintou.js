@@ -62,7 +62,7 @@
         const element = document.getElementById(elementId);
         if (element && element.textContent.trim()) {
           // コンテナの高さを計算（親要素の高さから余白を除く）
-          const parent = element.closest('#left2, #right2');
+          const parent = element.closest('.left2, .right2');
           if (parent) {
             const parentHeight = parent.clientHeight;
             const h3Height = parent.querySelector('h3').offsetHeight;
@@ -104,7 +104,7 @@
     
     // 利用可能な高さを計算する補助関数
     function getAvailableHeight(element) {
-      const parent = element.closest('#left2, #right2');
+      const parent = element.closest('.left2, .right2');
       if (parent) {
         const parentHeight = parent.clientHeight;
         const h3 = parent.querySelector('h3');
