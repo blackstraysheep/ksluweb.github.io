@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 :root {
-    --grey: #333;
     --white: #fff;
     --green: #2eff2e;
-    --deepgreen: #00cd00;
+    --deepgreen: #0a7a0a;
     --pastelgreen: #8eff8e;
+    --black: #111;
 }
 body{
     margin: 0rem;
@@ -17,7 +17,7 @@ body{
 html{
     height: 100%;
 }
-/*HEADER================================================ */
+
 header {
     background-image: linear-gradient(var(--green), var(--pastelgreen));
     position: fixed;
@@ -25,199 +25,127 @@ header {
     z-index: 1;
     height: 4rem;
 }
-
-header .wrapper {
-    display: flex;
-    justify-content: space-between;
-}
-header a {
-    font-size: 1.5rem;
-    color: #000000;
-}
 .top-buttons {
     position: absolute;
     top: 0;
     right: 0;
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
     padding: 0.5rem;
 }
-.btn-menu {
-    position: absolute;
-    top: 0rem;
-    right: 0rem;
-    height: 4rem;
-    width: 4rem;
-    border: 0;
-    background-color: var(--white);
-    font-size: 1rem;
-    text-align: center;
-}
-
 #top{
-    padding-top: 5rem;
-}
-
-.wrapper {
-    display: flex;
-    justify-content: space-between;
-}
-.btn {
-display: flex;
-    box-sizing: border-box;
-    background-color: var(--pastelgreen);
-    color: #000000;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 120px;
-    font-size: 1rem;
-}
-.btn a{
-    font-size: 1rem;
-    text-decoration: none;
-}
-#btnA, #btnB {
-width: 100px;
-height: 50px;
-}
-h1 {
-font-weight:600;
-font-size: 3em;
-color: black;
-padding: 0.5rem;
-margin: 0;
-padding-bottom: 2rem;
+    padding-top: 4.5rem;
 }
 h2 {
-font-weight:600;
-padding: 0.5rem;
-font-size: 2em;
-color: black;
-margin: 0;
+    font-weight:600;
+    padding: 0.5rem;
+    font-size: 2em;
+    color: black;
+    margin: 0;
 }
 h3 {
-font-weight:500;
-font-size: 1.8em;
-margin: 0;
-padding-top: 0.5rem;
-padding-bottom: 1.5rem;
+    font-weight:500;
+    font-size: 1.5em;
+    margin: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
 }
-#left {
-list-style-position: inside;
-text-align: left;
-float: center;
-height: 80vh;
-box-sizing: border-box;
-background: #ffccff;
-}
-#main {
-float: left;
-text-align: center;
-width: 30%;
-height: 80vh;
-box-sizing: border-box;
-background: #ffffff;
-padding: 1rem;
-}
-#right {
-list-style-position: inside;
-text-align: left;
-float: center;
-height: 80vh;
-box-sizing: border-box;
-background: #ffffff;
-}
+
 #left2 {
-list-style-position: inside;
-text-align: center;
-float: left;
-width: 6%;
-height: 90vh;
-box-sizing: border-box;
-background: #ffccff;
-border: 2px solid #000000;
-}
-#right2 {
-list-style-position: inside;
-text-align: center;
-float: left;
-width: 6%;
-height: 90vh;
-box-sizing: border-box;
-background: #ffffff;
-border: 2px solid #000000;
-}
-.space {
     list-style-position: inside;
     text-align: center;
     float: left;
-    width: 2.5%;
+    width: 6%;
     height: 90vh;
-    box-sizing: border-box;
-}
-
-#left3 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    list-style-position: inside;
-    text-align: center;
-    width: 40%;
     box-sizing: border-box;
     background: #ffccff;
     border: 2px solid #000000;
-    }
-#right3 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+}
+#right2 {
     list-style-position: inside;
     text-align: center;
-    width: 40%;
+    float: left;
+    width: 5.5%;
+    height: 90vh;
     box-sizing: border-box;
     background: #ffffff;
     border: 2px solid #000000;
-    }
-.team {
-        font-weight:700;
-        font-size: 2em;
-        color: black;
-        -ms-writing-mode: tb-rl;
-        writing-mode: vertical-rl;
-        text-align: left;
-        display: inline-block;
-        min-height: 30vh;
-        max-height: 60vh;
-        }
+}
+.space {
+    list-style-position: inside;
+    float: left;
+    width: 3.5%;
+    height: 90vh;
+    box-sizing: border-box;
+    writing-mode: vertical-lr; /*視覚的な左上揃え*/
+    font-size: 1.3em;
+    font-weight: 600;
+    text-align: left;
+}
         
 .kunakami {
-font-weight:700;
-font-size: 2.8em;
-color: black;
--ms-writing-mode: tb-rl;
-writing-mode: vertical-rl;
-text-align: left;
-display: inline-block;
+    font-weight:700;
+    font-size: 2.8em;
+    color: black;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    text-align: left;
+    display: inline-block;
 }
 
 /* 自動調整が適用された俳句欄のスタイル */
 .kunakami.auto-vertical {
   font-size: 2.8em; /* 基本サイズを維持 */
 }
-.hikou {
-writing-mode: horizontal-tb;
-}
-.tcy {
-    text-combine-upright: all;
-}
+
 
 /* 縦書き自動調整機能用スタイル */
 .auto-vertical {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  white-space: nowrap;
-  line-height: 1;
-  display: inline-block;
-  transform-origin: top right;
-  /* letter-spacing と transform はJSで動的に設定 */
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+    line-height: 1;
+    display: inline-block;
+    transform-origin: top right;
+    /* letter-spacing と transform はJSで動的に設定 */
+}
+
+/* ボタン設定 */
+#finalForm .submit {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0.3rem;
+    padding: 0.7rem 1.1rem;
+    min-height: 44px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    box-sizing: border-box;
+    width: 10rem; /* 横幅を統一 */
+    white-space: nowrap; /* 折り返し防止 */
+    border: 2px solid var(--black);
+    background: var(--white);
+    color: var(--black);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    transition: background-color 120ms ease, box-shadow 120ms ease, transform 60ms ease, color 120ms ease, border-color 120ms ease;
+    cursor: pointer; /* ホバー時の手アイコン */
+}
+
+/* ボタン共通のhover/active */
+#finalForm .submit:hover {
+    background: #f3f3f3;
+}
+
+#finalForm .submit:active {
+    transform: translateY(1px);
+}
+
+#finalForm .submit:focus-visible {
+    outline: 3px solid rgba(17, 17, 17, 0.35);
+    outline-offset: 2px;
+}
+
+#finalForm .submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
