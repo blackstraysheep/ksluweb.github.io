@@ -51,7 +51,7 @@ h3 {
     padding-bottom: 1.5rem;
 }
 
-#left2 {
+.left2 {
     list-style-position: inside;
     text-align: center;
     float: left;
@@ -61,7 +61,7 @@ h3 {
     background: #ffccff;
     border: 2px solid #000000;
 }
-#right2 {
+.right2 {
     list-style-position: inside;
     text-align: center;
     float: left;
