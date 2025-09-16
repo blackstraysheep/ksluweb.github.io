@@ -10,7 +10,11 @@
       element.classList.add('auto-vertical');
       
       // コンテナの高さを設定（指定がない場合は親要素の高さを使用）
-      const availableHeight = containerHeight || element.parentElement.clientHeight;
+      const fallbackHeight = element.parentElement ? element.parentElement.clientHeight : 0;
+      const availableHeight = containerHeight || fallbackHeight;
+      if (!availableHeight || availableHeight <= 0) {
+        return;
+      }
       
       // 文字列から改行を取り、前後空白は削る
       const text = element.textContent.replace(/\r?\n/g, '').trim();
@@ -61,12 +65,8 @@
       haikuElements.forEach(elementId => {
         const element = document.getElementById(elementId);
         if (element && element.textContent.trim()) {
-          // コンテナの高さを計算（親要素の高さから余白を除く）
-          const parent = element.closest('#left2, #right2');
-          if (parent) {
-            const parentHeight = parent.clientHeight;
-            const h3Height = parent.querySelector('h3').offsetHeight;
-            const availableHeight = parentHeight - h3Height - 40; // 40pxは余白
+          const availableHeight = getAvailableHeight(element);
+          if (availableHeight > 0) {
             applyVerticalLayout(elementId, availableHeight);
           }
         }
@@ -92,7 +92,12 @@
         const element = document.getElementById(elementId);
         if (element) {
           const observer = new MutationObserver(() => {
-            setTimeout(() => applyVerticalLayout(elementId, getAvailableHeight(element)), 50);
+            setTimeout(() => {
+              const availableHeight = getAvailableHeight(element);
+              if (availableHeight > 0) {
+                applyVerticalLayout(elementId, availableHeight);
+              }
+            }, 50);
           });
           observer.observe(element, { childList: true, characterData: true, subtree: true });
         }
@@ -105,11 +110,29 @@
     // 利用可能な高さを計算する補助関数
     function getAvailableHeight(element) {
       const parent = element.closest('#left2, #right2');
-      if (parent) {
-        const parentHeight = parent.clientHeight;
-        const h3 = parent.querySelector('h3');
-        const h3Height = h3 ? h3.offsetHeight : 0;
-        return parentHeight - h3Height - 40; // 40pxは余白
+      if (!parent) {
+        const fallbackParent = element.parentElement;
+        return fallbackParent ? fallbackParent.clientHeight : 0;
       }
-      return 200; // デフォルト値
+
+      const h3 = parent.querySelector('h3');
+      const h3Height = h3 ? h3.offsetHeight : 0;
+
+      const parentStyles = window.getComputedStyle(parent);
+      const parentPaddingTop = parseFloat(parentStyles.paddingTop) || 0;
+      const parentPaddingBottom = parseFloat(parentStyles.paddingBottom) || 0;
+
+      const container = element.parentElement;
+      const containerStyles = container ? window.getComputedStyle(container) : null;
+      const containerPaddingTop = containerStyles ? parseFloat(containerStyles.paddingTop) || 0 : 0;
+      const containerPaddingBottom = containerStyles ? parseFloat(containerStyles.paddingBottom) || 0 : 0;
+
+      const availableHeight = parent.clientHeight
+        - h3Height
+        - parentPaddingTop
+        - parentPaddingBottom
+        - containerPaddingTop
+        - containerPaddingBottom;
+
+      return availableHeight > 0 ? availableHeight : 0;
     }
