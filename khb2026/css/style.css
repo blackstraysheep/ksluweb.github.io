@@ -2,15 +2,7 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
 @import url(https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap);
-
-/*COLORS================================================ */
-:root {
-    --grey: #333;
-    --white: #fff;
-    --green: #2eff2e;
-    --deepgreen: #00cd00;
-    --pastelgreen: #8eff8e;
-}
+@import url(./color.css);
 
 /*GENERAL STYLING================================================ */
 html {
@@ -125,9 +117,9 @@ header .logo{
 }
 @keyframes bg-color {
      0% { background-color: var(--grey); }
-    40% { background-color: var(--pastelgreen); }
-    80% { background-color: var(--deepgreen); }
-   100% { background-color: var(--pastelgreen); }
+    40% { background-color: var(--pastelaccent); }
+    80% { background-color: var(--deepaccent); }
+   100% { background-color: var(--pastelaccent); }
 }
 #top h1 {
     padding-top: 6rem;
@@ -188,7 +180,7 @@ header .logo{
 
 /*ABOUT================================================ */
 #about {
-    background-image: linear-gradient(var(--deepgreen), var(--pastelgreen));
+    background-image: linear-gradient(var(--deepaccent), var(--pastelaccent));
     padding: 7rem 3rem;
     -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
     clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
@@ -261,7 +253,7 @@ header .logo{
 
 /*NEWS================================================ */
 #news {
-    background-image: linear-gradient(var(--pastelgreen), var(--green));
+    background-image: linear-gradient(var(--pastelaccent), var(--accent));
     padding: 7rem 0;
     -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
     clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
@@ -332,7 +324,7 @@ header .logo{
 .judge-table tr {
     border-radius: 10px; 
     border-bottom: 5px solid var(--white);
-    background-image: linear-gradient( to right, var(--pastelgreen), var(--white));
+    background-image: linear-gradient( to right, var(--pastelaccent), var(--white));
 }
 .judge-table td {
     display: block;
@@ -350,7 +342,7 @@ header .logo{
 
 /*expl================================================ */
 #expl {
-    background: linear-gradient(var(--pastelgreen), var(--deepgreen));
+    background: linear-gradient(var(--pastelaccent), var(--deepaccent));
     padding: 6rem 1rem 2rem;
     -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);

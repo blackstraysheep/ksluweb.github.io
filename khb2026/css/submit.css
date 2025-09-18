@@ -1,14 +1,7 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
-/*COLORS================================================ */
-:root {
-    --grey: #333;
-    --white: #fff;
-    --green: #2eff2e;
-    --deepgreen: #00cd00;
-    --pastelgreen: #8eff8e;
-    --black: #111;
-}
+@import url(./color.css);
+
 /*GENERAL STYLING================================================ */
 *{
     font-family: 'Noto Sans JP', sans-serif;
@@ -32,7 +25,7 @@ h2 {
 }
 /*HEADER================================================ */
 .header {
-        background-image: linear-gradient(var(--pastelgreen), var(--white));
+        background-image: linear-gradient(var(--pastelaccent), var(--white));
         padding: 0.2rem 0;
 }
 
@@ -95,10 +88,10 @@ h2 {
 }
 
 .haiku:focus-visible {
-    background-color: var(--pastelgreen);
+    background-color: var(--pastelaccent);
 }
 .name:focus-visible {
-    background-color: var(--pastelgreen);
+    background-color: var(--pastelaccent);
 }
 
 @media (max-width: 700px) {
