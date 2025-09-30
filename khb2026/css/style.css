@@ -180,7 +180,7 @@ header .logo{
 
 /*ABOUT================================================ */
 #about {
-    background-image: linear-gradient(var(--deepaccent), var(--pastelaccent));
+    background-image: linear-gradient(var(--accent), var(--pastelaccent));
     padding: 7rem 3rem;
     -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
     clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
@@ -342,7 +342,7 @@ header .logo{
 
 /*expl================================================ */
 #expl {
-    background: linear-gradient(var(--pastelaccent), var(--deepaccent));
+    background: linear-gradient(var(--pastelaccent), var(--accent));
     padding: 6rem 1rem 2rem;
     -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
@@ -494,4 +494,5 @@ DESKTOP SIZE
         width: 75%;
     }
 }
+
 
